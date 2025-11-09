@@ -5,14 +5,12 @@ start, end = map(int, input("Введите диапозон: ").split())
 if start > end:
     start, end = end, start
 
-start = max(1, min(start, len(first_list))) - 1
-end = max(1, min(end, len(first_list))) - 1
+start = max(1, min(start, len(first_list)))
+end = max(1, min(end, len(first_list)))
 
-for i in range(end, start-1, -1):
-    second_list.append(first_list[i])
-
-for i in range(end, start-1, -1):
-    del first_list[i]
+elements_to_move = first_list[start - 1:end][::-1]
+second_list.extend(elements_to_move)
+del first_list[start - 1:end]
 
 print(first_list)
 print(second_list)
