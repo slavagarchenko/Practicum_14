@@ -1,6 +1,8 @@
 text = ""
-while line != "":
+while True:
     line = input()
+    if line == "":
+        break
     text = text + line + " "
 text = text.lower()
 
